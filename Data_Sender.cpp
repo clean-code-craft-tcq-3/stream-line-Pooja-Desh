@@ -5,7 +5,7 @@ void readSenderDataFromFile(float *Temperature, int *StateOfCharge,char *inputFi
 {
   FILE *SensorDataFile = fopen(inputFileName,"r");
   if (SensorDataFile != NULL)
-  {for(int FileIndex = 0; fscanf(SensorDataFile,"%f %d\n",Temperature[FileIndex],StateOfCharge[FileIndex]); FileIndex++)}
+  {for(int FileIndex = 0; fscanf(SensorDataFile,"%f %d\n",&Temperature[FileIndex],&StateOfCharge[FileIndex]); FileIndex++)}
   fclose(SensorDataFile);
 }
 
