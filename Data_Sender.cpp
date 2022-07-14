@@ -1,12 +1,20 @@
 #include <stdio.h>
+#include <iostream.h>
 #include <Data_Sender.hpp>
 
-void readSenderDataFromFile(float Temperature, int StateOfCharge,char *fileName)
+void readSenderDataFromFile(float *Temperature, int *StateOfCharge,char *inputFileName)
 {
-  FILE *senderDataFile = fopen(filename,"r");
+  FILE *SensorDataFile = fopen(inputFile,"r");
+  if (SensorDataFile != NULL)
+    for(int FileIndex = 1; fscanf(SensorDataFile,"%f %d\n",Temperature[FileIndex],StateOfCharge[FileIndex]); FileIndex++)
+  fclose(SensorDataFile);
 }
 
-void sendDataOnConsole(float Temperature, int StateOfCharge)
+void sendDataOnConsole(float *Temperature, int *StateOfCharge)
 {
-  
+  printf("Temperature  StateOfCharge\n");
+  for(int ReadingIndex=0; ReadingIndex < 50; ReadingIndex++)
+  {
+    printf("%f\t %d\n",Temperature[ReadingIndex],StateOfCharge[ReadingIndex]);
+  }
 }
