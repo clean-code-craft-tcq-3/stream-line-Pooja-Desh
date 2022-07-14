@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <iostream.h>
 #include "Data_Sender.hpp"
 
 void readSenderDataFromFile(float *Temperature, int *StateOfCharge,char *inputFileName)
