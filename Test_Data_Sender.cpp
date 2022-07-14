@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 
-#include "catch.hpp"
+#include "test/catch.hpp"
 #include "Data_Sender.hpp"
 
 TEST_CASE("Check if data is read from the file")
