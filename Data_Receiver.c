@@ -12,7 +12,8 @@ void readDataFromConsole(char consoleoutput[count][10])
   }
 }
 
-void main()
+int main()
 {
+  char consoleoutput[count][10];
   readDataFromConsole(consoleoutput);
 }
