@@ -1,3 +1,5 @@
+#include "Data_Receiver.h"
+
 void readDataFromConsole(char consoleoutput[count][10])
 {
   char data[count];
