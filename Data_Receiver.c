@@ -11,3 +11,8 @@ void readDataFromConsole(char consoleoutput[count][10])
     strcpy(consoleoutput[index],data);
   }
 }
+
+void main()
+{
+  readDataFromConsole(consoleoutput);
+}
