@@ -10,6 +10,7 @@ void readDataFromConsole(char consoleoutput[count][10])
     output = fgets(data,count,stdin);
     strcpy(consoleoutput[index],data);
     puts(consoleoutput[index]);
+    printf("\n%d",index);
   }
 }
 
