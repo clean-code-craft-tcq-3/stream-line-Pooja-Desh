@@ -14,7 +14,7 @@ void readDataFromConsole(char consoleoutput[count][50])
 
 int main()
 {
-  char consoleoutput[count][10];
+  char consoleoutput[count][50];
   readDataFromConsole(consoleoutput);
   return 0;
 }
