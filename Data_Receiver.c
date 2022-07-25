@@ -8,6 +8,7 @@ void readDataFromConsole(char consoleoutput[count][10])
   for (int index=0;output!=NULL;index++)
   {
     output = fgets(data,count,stdin);
+    puts(output);
     strcpy(consoleoutput[index],data);
     puts(consoleoutput[index]);
     printf("\n%d",index);
