@@ -4,4 +4,4 @@
 
 #define count 50
 
-void readDataFromConsole(char consoleoutput[count][10]);
+void readDataFromConsole(char consoleoutput[count][50]);
