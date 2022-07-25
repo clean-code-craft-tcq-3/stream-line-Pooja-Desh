@@ -18,7 +18,7 @@ int main()
 {
   char consoleoutput[count][10];
   readDataFromConsole(consoleoutput);
-  puts(consoleoutput[index]);
+  printf("\n testttt);
   return 0;
 }
   
