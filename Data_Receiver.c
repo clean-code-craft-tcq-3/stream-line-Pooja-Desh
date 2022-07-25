@@ -18,6 +18,7 @@ int main()
 {
   char consoleoutput[count][10];
   readDataFromConsole(consoleoutput);
+  puts(consoleoutput[index]);
   return 0;
 }
   
