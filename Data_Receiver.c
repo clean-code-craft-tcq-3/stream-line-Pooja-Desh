@@ -1,6 +1,6 @@
 #include "Data_Receiver.h"
 
-void readDataFromConsole(char consoleoutput[count][10])
+void readDataFromConsole(char consoleoutput[count][50])
 {
   char data[count];
   char *output;
