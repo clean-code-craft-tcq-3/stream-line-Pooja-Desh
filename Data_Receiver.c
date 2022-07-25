@@ -13,13 +13,13 @@ void readDataFromConsole(char consoleoutput[count][10])
     puts(consoleoutput[index]);
     printf("\n%d",index);
   }
+  printf("\n testttt");
 }
 
 int main()
 {
   char consoleoutput[count][10];
   readDataFromConsole(consoleoutput);
-  printf("\n testttt");
   return 0;
 }
   
