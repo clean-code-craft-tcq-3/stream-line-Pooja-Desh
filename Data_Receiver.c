@@ -7,6 +7,33 @@ void readDataFromConsole(float* Temperature, float* SOC)
     scanf("%f ,%f ",&Temperature[index],&SOC[index]);
   }
 }
+
+float getMaxValue(float *sensordata)
+{
+  float maxvalue = sensordata[0];
+  for(int index = 0; index < readings_count; index++)
+  {
+    if(sensordata[index] > maxvalue)
+    {
+      maxvalue = sensordata[index];
+    }
+  }
+  return maxvalue;
+}
+
+float getMinValue(float *sensordata)
+{
+  float minvalue = sensordata[0]; 
+  for(int index = 0; index < readings_count; index++)
+  {
+    if(sensordata[index] < minvalue)
+    {
+      minvalue = sensordata[index];
+    }
+  }
+  return minvalue;
+}
+
   
 
 int main()
