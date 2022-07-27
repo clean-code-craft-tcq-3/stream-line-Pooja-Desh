@@ -10,6 +10,7 @@ void readDataFromConsole(char consoleoutput[count][50])
     scanf("%s",data);
     output = data;
     strcpy(consoleoutput[index],data);
+    printf("%s",consoleoutput);
   }
 }
 
