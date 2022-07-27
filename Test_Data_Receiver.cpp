@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+#include "test/catch.hpp"
 #include "Data_Receiver.h"
 
 TEST_CASE("Tests to check whether sensor data is read from console") 
