@@ -11,8 +11,9 @@ void readDataFromConsole(float* Temperature, float* SOC)
 
 int main()
 {
-  char consoleoutput[count][50];
-  readDataFromConsole(consoleoutput);
+  float Temperature[readings_count] = {0};
+  float SOC[readings_count] = {0};
+  readDataFromConsole(Temperature,SOC);
   return 0;
 }
   
