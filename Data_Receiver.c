@@ -1,7 +1,7 @@
 #include "Data_Receiver.h"
 #include "Data_Sender.hpp"
 
-void readDataFromConsole(float* Temperature, float* SOC)
+void readDataFromConsole(float* Temperature, int* SOC)
 {
   for(int index = 0; index < readings_count; index++)
   {
@@ -57,7 +57,7 @@ void printReceivedDataToConsole(float *sensorparameter, float maxvalue, float mi
   printf("Maximum value: %f, Minimum value: %f, SimpleMovingAverage: %f\n",maxvalue,minvalue,SMA);  
 }
 
-void receiveAndProcessSensorData(float* Temperature, float* SOC)
+void receiveAndProcessSensorData(float* Temperature, int* SOC)
 {
   readDataFromConsole(Temperature,SOC);
   printReceivedDataToConsole(Temperature,getMaxValue(Temperature),getMinValue(Temperature),calculateSimpleMovingAverage(Temperature));
