@@ -8,39 +8,67 @@ void readDataFromConsole(float* Temperature, float* SOC)
   }
 }
 
-float getMaxValue(float *sensordata)
+float getMaxValue(float *sensorparameter)
 {
-  float maxvalue = sensordata[0];
+  float maxvalue = sensorparameter[0];
   for(int index = 0; index < readings_count; index++)
   {
-    if(sensordata[index] > maxvalue)
+    if(sensorparameter[index] > maxvalue)
     {
-      maxvalue = sensordata[index];
+      maxvalue = sensorparameter[index];
     }
   }
   return maxvalue;
 }
 
-float getMinValue(float *sensordata)
+float getMinValue(float *sensorparameter)
 {
-  float minvalue = sensordata[0]; 
+  float minvalue = sensorparameter[0]; 
   for(int index = 0; index < readings_count; index++)
   {
-    if(sensordata[index] < minvalue)
+    if(sensorparameter[index] < minvalue)
     {
-      minvalue = sensordata[index];
+      minvalue = sensorparameter[index];
     }
   }
   return minvalue;
 }
 
-  
+float calculateSimpleMovingAverage(float *sensorparameter)
+{
+  float SMA = 0.0;
+  float total = 0.0;
+  for(int index = (readings_count-5); index < readings_count; index++)
+  {
+    total += sensorparameter[index];
+  }
+  SMA = total/5; 
+  return SMA;
+}
+
+void printReceivedDataToConsole(float *sensorparameter, float maxvalue, float minvalue, float SMA)
+{
+  printf("Data received from sender\n");
+  for(int index = 0; index < readings_count; index++)
+  {
+    printf("%f\n",sensorparameter[readings_count]);
+  }
+  printf("Maximum value: %f, Minimum value: %f, SimpleMovingAverage: %f\n",maxvalue,minvalue,SMA);  
+}
+
+void receiveAndProcessSensorData(float* Temperature, float* SOC)
+{
+  readDataFromConsole(Temperature,SOC);
+  printReceivedDataToConsole(Temperature,getMaxValue(Temperature),getMinValue(Temperature),calculateSimpleMovingAverage(Temperature));
+  printReceivedDataToConsole(SOC,getMaxValue(SOC),getMinValue(SOC),calculateSimpleMovingAverage(SOC));
+}
+
 
 int main()
 {
   float Temperature[readings_count] = {0};
   float SOC[readings_count] = {0};
-  readDataFromConsole(&Temperature[0],&SOC[0]);
+  receiveAndProcessSensorData(&Temperature[0],&SOC[0]);
   return 0;
 }
   
