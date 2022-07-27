@@ -13,7 +13,7 @@ int main()
 {
   float Temperature[readings_count] = {0};
   float SOC[readings_count] = {0};
-  readDataFromConsole(Temperature,SOC);
+  readDataFromConsole(&Temperature[0],&SOC[0]);
   return 0;
 }
   
