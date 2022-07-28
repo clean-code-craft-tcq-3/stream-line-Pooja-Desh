@@ -12,8 +12,8 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   float expectedoutput[2][2] = {{10,1}, {20.2,2}};
   for(int i=0;i<2;i++)
   {
-    REQUIRE(Temperature[i] == expectedoutput[i][0]);
-    REQUIRE(SOC[i] == expectedoutput[i][1]);
+    REQUIRE(Temperature_value[i] == expectedoutput[i][0]);
+    REQUIRE(SOC_value[i] == expectedoutput[i][1]);
   }
   //To check Max, Min and SMA values of Temperature
   expectedMaxValue = 92;
@@ -22,9 +22,9 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   observedMaxValue = getMaxValue(&Temperature_value[0]);
   observedMinValue = getMinValue(&Temperature_value[0]);
   observedSMAValue = calculateSimpleMovingAverage(&Temperature_value[0]);
-  REQUIRE(Current_MaxValue == expectedMaxValue);
-  REQUIRE(Current_MinValue == expectedMinValue);
-  REQUIRE(Current_SMAValue == expectedSMAValue);
+  REQUIRE(observedMaxValue == expectedMaxValue);
+  REQUIRE(observedMinValue == expectedMinValue);
+  REQUIRE(observedSMAValue == expectedSMAValue);
   
   //To check Max, Min and SMA values of SOC
   expectedMaxValue = 115;
@@ -33,11 +33,8 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   observedMaxValue = getMaxValue(&SOC_value[0]);
   observedMinValue = getMinValue(&SOC_value[0]);
   observedSMAValue = calculateSimpleMovingAverage(&SOC_value[0]);
-  REQUIRE(Current_MaxValue == expectedMaxValue);
-  REQUIRE(Current_MinValue == expectedMinValue);
-  REQUIRE(Current_SMAValue == expectedSMAValue);
-  
-}
-
+  REQUIRE(observedMaxValue == expectedMaxValue);
+  REQUIRE(observedMinValue == expectedMinValue);
+  REQUIRE(observedSMAValue == expectedSMAValue);
 
 }
