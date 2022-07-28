@@ -52,7 +52,7 @@ void printReceivedDataToConsole(float *sensorparameter, float maxvalue, float mi
   printf("Data received from sender\n");
   for(int index = 0; index < readings_count; index++)
   {
-    printf("%f\n",sensorparameter[readings_count]);
+    printf("%f\n",sensorparameter[index]);
   }
   printf("Maximum value: %f, Minimum value: %f, SimpleMovingAverage: %f\n",maxvalue,minvalue,SMA);  
 }
