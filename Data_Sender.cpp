@@ -5,7 +5,7 @@
 void readSenderDataFromFile(float *Temperature, float *StateOfCharge,char *inputFileName)
 {
   float TemperatureData;
-  int StateOfChargeData;
+  float StateOfChargeData;
   
   FILE *SensorDataFile = fopen(inputFileName,"r");
   if (SensorDataFile != NULL)
