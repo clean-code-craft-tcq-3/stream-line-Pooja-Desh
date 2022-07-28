@@ -24,6 +24,6 @@ void sendDataOnConsole(float *Temperature, int *StateOfCharge)
   //printf("Temperature  StateOfCharge\n");
   for(int ReadingIndex=0; ReadingIndex < 50; ReadingIndex++)
   {
-    printf("%f\t %d\n",Temperature[ReadingIndex],StateOfCharge[ReadingIndex]);
+    printf("%.2f\t %d\n",Temperature[ReadingIndex],StateOfCharge[ReadingIndex]);
   }
 }
