@@ -29,7 +29,7 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   //To check Max, Min and SMA values of SOC
   expectedMaxValue = 115;
   expectedMinValue = 3;
-  expectedSMAValue = 50;
+  expectedSMAValue = 24.6;
   observedMaxValue = getMaxValue(&SOC_value[0]);
   observedMinValue = getMinValue(&SOC_value[0]);
   observedSMAValue = calculateSimpleMovingAverage(&SOC_value[0]);
