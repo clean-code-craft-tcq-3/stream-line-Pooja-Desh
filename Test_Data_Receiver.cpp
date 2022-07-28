@@ -16,8 +16,8 @@ TEST_CASE("Tests to check whether sensor data is read from console")
     REQUIRE(SOC_value[i] == expectedoutput[i][1]);
   }
   //To check Max, Min and SMA values of Temperature
-  expectedMaxValue = 92;
-  expectedMinValue = -15;
+  expectedMaxValue = 115;
+  expectedMinValue = 3;
   expectedSMAValue = 18.3;
   observedMaxValue = getMaxValue(&Temperature_value[0]);
   observedMinValue = getMinValue(&Temperature_value[0]);
@@ -27,8 +27,8 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   REQUIRE(observedSMAValue == expectedSMAValue);
   
   //To check Max, Min and SMA values of SOC
-  expectedMaxValue = 115;
-  expectedMinValue = 3;
+  expectedMaxValue = 88;
+  expectedMinValue = 1;
   expectedSMAValue = 24.6;
   observedMaxValue = getMaxValue(&SOC_value[0]);
   observedMinValue = getMinValue(&SOC_value[0]);
