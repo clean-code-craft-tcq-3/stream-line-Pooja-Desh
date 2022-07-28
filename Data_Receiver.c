@@ -11,40 +11,40 @@ void readDataFromConsole(float* Temperature, float* SOC)
 
 float getMaxValue(float *sensorparameter)
 {
-  float maxvalue = sensorparameter[0];
+  float maximumvalue = sensorparameter[0];
   for(int index = 0; index < readings_count; index++)
   {
-    if(sensorparameter[index] > maxvalue)
+    if(sensorparameter[index] > maximumvalue)
     {
-      maxvalue = sensorparameter[index];
+      maximumvalue = sensorparameter[index];
     }
   }
-  return maxvalue;
+  return maximumvalue;
 }
 
 float getMinValue(float *sensorparameter)
 {
-  float minvalue = sensorparameter[0]; 
+  float minimumvalue = sensorparameter[0]; 
   for(int index = 0; index < readings_count; index++)
   {
-    if(sensorparameter[index] < minvalue)
+    if(sensorparameter[index] < minimumvalue)
     {
-      minvalue = sensorparameter[index];
+      minimumvalue = sensorparameter[index];
     }
   }
-  return minvalue;
+  return minimumvalue;
 }
 
 float calculateSimpleMovingAverage(float *sensorparameter)
 {
-  float SMA = 0.0;
+  float SMAvalue = 0.0;
   float total = 0.0;
   for(int index = (readings_count-5); index < readings_count; index++)
   {
     total += sensorparameter[index];
   }
-  SMA = total/5; 
-  return SMA;
+  SMAvalue = total/5; 
+  return SMAvalue;
 }
 
 void printReceivedDataToConsole(float *sensorparameter, float maxvalue, float minvalue, float SMA)
