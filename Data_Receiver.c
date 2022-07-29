@@ -54,7 +54,7 @@ int printReceivedDataToConsole(float *sensorparameter, float maxvalue, float min
   {
     printf("%f\n",sensorparameter[index]);
   }
-  printf("Maximum value: %f, Minimum value: %f, SimpleMovingAverage: %f\n",maxvalue,minvalue,SMA);  
+  printf("Maximum value: %f, Minimum value: %f, SimpleMovingAverage of last 5 values: %f\n",maxvalue,minvalue,SMA);  
   return 1;
 }
 
