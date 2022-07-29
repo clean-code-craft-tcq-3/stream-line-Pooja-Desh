@@ -47,7 +47,7 @@ float calculateSimpleMovingAverage(float *sensorparameter)
   return SMAvalue;
 }
 
-void printReceivedDataToConsole(float *sensorparameter, float maxvalue, float minvalue, float SMA)
+int printReceivedDataToConsole(float *sensorparameter, float maxvalue, float minvalue, float SMA)
 {
   printf("Data received from sender\n");
   for(int index = 0; index < readings_count; index++)
@@ -55,6 +55,7 @@ void printReceivedDataToConsole(float *sensorparameter, float maxvalue, float mi
     printf("%f\n",sensorparameter[index]);
   }
   printf("Maximum value: %f, Minimum value: %f, SimpleMovingAverage: %f\n",maxvalue,minvalue,SMA);  
+  return 1;
 }
 
 void receiveAndProcessSensorData(float* Temperature, float* SOC)
