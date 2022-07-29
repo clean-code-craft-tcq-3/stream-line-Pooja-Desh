@@ -3,7 +3,7 @@
 #include "Data_Receiver.h"
 #include "Data_Sender.hpp"
 
-TEST_CASE("Tests to check whether sensor data is read from console") 
+TEST_CASE("Tests to check whether sensor data is read from console and also to check whether correct Max, Min and SMA values of sensor parameters are printed on console") 
 {
   float Temperature_value[readings_count] = {0};
   float SOC_value[readings_count] = {0};
@@ -26,6 +26,9 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   REQUIRE(observedMinValue == expectedMinValue);
   REQUIRE(observedSMAValue == expectedSMAValue);
   
+  //To check print to console function
+  REQUIRE(printReceivedDataToConsole(&Temperature_value[0],115,3,18.3) == 1);
+          
   //To check Max, Min and SMA values of SOC
   expectedMaxValue = 88;
   expectedMinValue = 1;
@@ -36,5 +39,7 @@ TEST_CASE("Tests to check whether sensor data is read from console")
   REQUIRE(observedMaxValue == expectedMaxValue);
   REQUIRE(observedMinValue == expectedMinValue);
   REQUIRE(observedSMAValue == expectedSMAValue);
-
+  
+  //To check print to console function
+  REQUIRE(printReceivedDataToConsole(&SOC_value[0],88,1,24.6) == 1);
 }
